@@ -97,8 +97,18 @@ function getRestuarantList(request, response, query, lat, lon){
                 if(res.error) {
                     res.setHeader('Content-Type', 'application/json');
                     res.send(JSON.stringify({
-                        "speech" : "Error. Can you try it again ? ",
-                        "displayText" : "Error. Can you try it again ? "
+                        "payload": {
+                            "google": {
+                                "expectUserResponse": true,
+                                "richResponse": {
+                                    "items": [{
+                                        "simpleResponse": {
+                                            "textToSpeech": "Error. Can you try it again ? "
+                                        }
+                                    }]
+                                }
+                            }   
+                        }
                     }));
                 } 
                 else if(res) {   
@@ -132,8 +142,18 @@ function getRestuarantInfo(request, response, query, lat, lon){
                 if(res.error) {
                     res.setHeader('Content-Type', 'application/json');
                     res.send(JSON.stringify({
-                        "speech" : "Error. Can you try it again ? ",
-                        "displayText" : "Error. Can you try it again ? "
+                        "payload": {
+                            "google": {
+                                "expectUserResponse": true,
+                                "richResponse": {
+                                    "items": [{
+                                        "simpleResponse": {
+                                            "textToSpeech": "Error. Can you try it again ? "
+                                        }
+                                    }]
+                                }
+                            }   
+                        }
                     }));
                 } 
                 else if(res) {   
